@@ -4,8 +4,8 @@ var assert = require('assert'),
 describe('YahooTokenStrategy', function () {
     it('Should contain proper name', function () {
         assert.equal(new YahooTokenStrategy({
-            consumerKey: '123',
-            consumerSecret: '123'
+            clientID: '123',
+            clientSecret: '123'
         }, function () {
         }).name, 'yahoo-token');
     });

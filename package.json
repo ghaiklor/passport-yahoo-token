@@ -4,7 +4,7 @@
     "description": "Passport strategy for authenticating with Yahoo access tokens",
     "main": "index.js",
     "scripts": {
-        "test": "NODE_PATH=lib node_modules/.bin/vows test/*.js"
+        "test": "mocha --recursive"
     },
     "repository": {
         "type": "git",
@@ -26,6 +26,6 @@
         "passport-oauth": "^1.0.0"
     },
     "devDependencies": {
-        "vows": "^0.8.1"
+        "mocha": "^2.1.0"
     }
 }

@@ -161,7 +161,7 @@ describe('YahooTokenStrategy', function () {
             done(null, body, null);
         };
 
-        strategy.userProfile('token', 'guid', function (error, profile) {
+        strategy._loadUserProfile({}, function (error, profile) {
             if (error) {
                 return done(error);
             }

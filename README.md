@@ -68,10 +68,6 @@ This route accepts 3 parameters: `access_token`, `refresh_token` and `xoauth_yah
 If you receive a `401 Unauthorized` error, it is most likely because you have wrong access token or not yet specified any application "Permissions".
 Once you refresh access token with new permissions, try to send this access token again.
 
-## Credits
-
-  - [Eugene Obrezkov](http://github.com/ghaiklor)
-
 ## License
 
 The MIT License (MIT)

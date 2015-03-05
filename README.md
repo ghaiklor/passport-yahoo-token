@@ -1,6 +1,6 @@
 # passport-yahoo-token
 
-[![Build Status](https://travis-ci.org/ghaiklor/passport-yahoo-token.svg?branch=master)](https://travis-ci.org/ghaiklor/passport-yahoo-token)
+[![npm version](https://badge.fury.io/js/passport-yahoo-token.svg)](http://badge.fury.io/js/passport-yahoo-token) [![Build Status](https://travis-ci.org/ghaiklor/passport-yahoo-token.svg?branch=master)](https://travis-ci.org/ghaiklor/passport-yahoo-token)
 
 [Passport](http://passportjs.org/) strategies for authenticating with [Yahoo!](http://www.yahoo.com/) OAuth2 access tokens.
 

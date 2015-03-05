@@ -17,7 +17,7 @@ describe('YahooTokenStrategy', function () {
         }, function () {
         });
 
-        strategy._oauth2.getProtectedResource = function (url, accessToken, done) {
+        strategy._oauth2.get = function (url, accessToken, done) {
             var body = '{   \
           "profile":   \
           {  \

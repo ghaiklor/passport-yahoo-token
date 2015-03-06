@@ -2,9 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/passport-yahoo-token.svg)](http://badge.fury.io/js/passport-yahoo-token) [![Build Status](https://travis-ci.org/ghaiklor/passport-yahoo-token.svg?branch=master)](https://travis-ci.org/ghaiklor/passport-yahoo-token)
 
-[Passport](http://passportjs.org/) strategies for authenticating with [Yahoo!](http://www.yahoo.com/) OAuth2 access tokens.
+[Passport](http://passportjs.org/) strategy for authenticating with [Yahoo!](http://www.yahoo.com/) access tokens using the OAuth 2.0 API.
 
-This module lets you authenticate using Yahoo! in your Node.js applications by access tokens.
+This module lets you authenticate using Yahoo! in your Node.js applications.
 By plugging into Passport, Yahoo! authentication can be easily and unobtrusively integrated into any application or framework that supports [Connect](http://www.senchalabs.org/connect/)-style middleware, including [Express](http://expressjs.com/).
 
 ## Installation
@@ -17,8 +17,8 @@ npm install passport-yahoo-token
 
 ### Configure Strategy
 
-The Yahoo authentication strategy authenticates users using a Yahoo account and OAuth2 access tokens.
-The strategy requires a `verify` callback, which accepts accessToken, refreshToken, profile and calls `done` providing a user, as well as `options` specifying a clientID and clientSecret.
+The Yahoo! authentication strategy authenticates users using a Yahoo! account and OAuth 2.0 tokens.
+The strategy requires a `verify` callback, which accepts these credentials and calls `next` providing a user, as well as `options` specifying a app ID and app secret.
 
 ```javascript
 passport.use(new YahooTokenStrategy({
@@ -39,7 +39,7 @@ Use `passport.authenticate()`, specifying the `yahoo-token` strategy, to authent
 For example, as route middleware in an [Express](http://expressjs.com/) application:
 
 ```javascript
-app.get('/auth/yahoo', passport.authenticate('yahoo-token');
+app.get('/auth/yahoo', passport.authenticate('yahoo-token'));
 ```
 
 Or if you are using Sails framework:
@@ -57,11 +57,7 @@ module.exports = {
 };
 ```
 
-### Parameters in request
-
-Based on examples above, you should have route `auth/yahoo`.
-This route accepts 3 parameters: `access_token`, `refresh_token` and `xoauth_yahoo_guid`.
-`access_token` and `xoauth_yahoo_guid` is REQUIRED.
+The POST request to this route should include a JSON object with the keys `access_token`, `xoauth_yahoo_guid`, and optionally, `refresh_token` set to the credentials you receive from Yahoo!.
 
 ## Issues
 

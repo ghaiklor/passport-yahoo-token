@@ -1,4 +1,5 @@
-var assert = require('assert'),
+var chai = require('chai'),
+    assert = chai.assert,
     YahooTokenStrategy = require('../').Strategy,
     fakeProfile = JSON.stringify(require('./fixtures/profile.json'));
 

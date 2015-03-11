@@ -1,6 +1,6 @@
 # passport-yahoo-token
 
-[![npm version](https://badge.fury.io/js/passport-yahoo-token.svg)](http://badge.fury.io/js/passport-yahoo-token) [![Build Status](https://travis-ci.org/ghaiklor/passport-yahoo-token.svg?branch=master)](https://travis-ci.org/ghaiklor/passport-yahoo-token)
+![Build Status](https://img.shields.io/travis/ghaiklor/passport-yahoo-token.svg) ![Coverage](https://img.shields.io/coveralls/ghaiklor/passport-yahoo-token.svg) ![Downloads](https://img.shields.io/npm/dm/passport-yahoo-token.svg) ![npm version](https://img.shields.io/npm/v/passport-yahoo-token.svg) ![dependencies](https://img.shields.io/david/ghaiklor/passport-yahoo-token.svg) ![dev dependencies](https://img.shields.io/david/dev/ghaiklor/passport-yahoo-token.svg) ![License](https://img.shields.io/npm/l/passport-yahoo-token.svg)
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Yahoo!](http://www.yahoo.com/) access tokens using the OAuth 2.0 API.
 

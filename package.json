@@ -1,6 +1,6 @@
 {
     "name": "passport-yahoo-token",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Yahoo! token authentication strategy for Passport",
     "main": "index.js",
     "scripts": {
@@ -16,7 +16,11 @@
         "auth",
         "token"
     ],
-    "author": "ghaiklor",
+    "author": {
+        "name": "ghaiklor",
+        "email": "ghaiklor@gmail.com",
+        "url": "https://www.facebook.com/ghaiklor"
+    },
     "contributors": [
         {
             "name": "Andrew Orel",

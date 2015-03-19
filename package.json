@@ -17,6 +17,13 @@
         "token"
     ],
     "author": "ghaiklor",
+    "contributors": [
+        {
+            "name": "Andrew Orel",
+            "email": "ashaman1991@gmail.com",
+            "url": "https://www.facebook.com/ashaman1991"
+        }
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/ghaiklor/passport-yahoo-token/issues"

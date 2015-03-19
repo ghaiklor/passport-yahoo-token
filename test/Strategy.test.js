@@ -138,6 +138,7 @@ describe('YahooTokenStrategy:userProfile', function () {
             assert.equal(typeof profile.photos[0].value, 'string');
             assert.equal(typeof profile._raw, 'string');
             assert.equal(typeof profile._json, 'object');
+            assert.equal(profile._json.id, '12345');
 
             done();
         });

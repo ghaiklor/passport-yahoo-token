@@ -131,14 +131,16 @@ describe('YahooTokenStrategy:userProfile', function () {
             if (error) return done(error);
 
             assert.equal(profile.provider, 'yahoo');
-            assert.equal(profile.id, '12345');
-            assert.equal(profile.displayName, 'Samantha Edgerton');
-            assert.equal(profile.name.familyName, 'Edgerton');
-            assert.equal(profile.name.givenName, 'Samantha');
-            assert.equal(typeof profile.photos[0].value, 'string');
+            assert.equal(profile.id, 'SCQ4A46XAEDWNYKPZ6PJ4JHC4E');
+            assert.equal(profile._json.id, 'SCQ4A46XAEDWNYKPZ6PJ4JHC4E');
+            assert.equal(profile.displayName, 'Andrew Orel');
+            assert.equal(profile.name.familyName, 'Orel');
+            assert.equal(profile.name.givenName, 'Andrew');
+            assert.equal(profile.emails[0].value, 'andrew_orel@yahoo.com');
+            assert.equal(profile.emails[0].type, 'HOME');
+            assert.equal(profile.photos[0].value, 'https://s.yimg.com/dh/ap/social/profile/profile_b192.png');
             assert.equal(typeof profile._raw, 'string');
             assert.equal(typeof profile._json, 'object');
-            assert.equal(profile._json.id, '12345');
 
             done();
         });

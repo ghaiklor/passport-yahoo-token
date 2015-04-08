@@ -1,45 +1,45 @@
 {
-    "name": "passport-yahoo-token",
-    "version": "1.4.2",
-    "description": "Yahoo! token authentication strategy for Passport",
-    "main": "index.js",
-    "scripts": {
-        "test": "istanbul cover --report lcovonly _mocha -- --recursive --reporter spec --require ./test/bootstrap ./test/*.test.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ghaiklor/passport-yahoo-token.git"
-    },
-    "keywords": [
-        "passport",
-        "yahoo",
-        "auth",
-        "token"
-    ],
-    "author": {
-        "name": "ghaiklor",
-        "email": "ghaiklor@gmail.com",
-        "url": "https://www.facebook.com/ghaiklor"
-    },
-    "contributors": [
-        {
-            "name": "Andrew Orel",
-            "email": "ashaman1991@gmail.com",
-            "url": "https://www.facebook.com/ashaman1991"
-        }
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/ghaiklor/passport-yahoo-token/issues"
-    },
-    "homepage": "https://github.com/ghaiklor/passport-yahoo-token",
-    "dependencies": {
-        "passport-oauth": "^1.0.0"
-    },
-    "devDependencies": {
-        "chai": "^2.1.1",
-        "chai-passport-strategy": "^0.2.0",
-        "istanbul": "^0.3.7",
-        "mocha": "^2.1.0"
+  "name": "passport-yahoo-token",
+  "version": "1.4.3",
+  "description": "Yahoo! token authentication strategy for Passport",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover _mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ghaiklor/passport-yahoo-token.git"
+  },
+  "keywords": [
+    "passport",
+    "yahoo",
+    "auth",
+    "token"
+  ],
+  "author": {
+    "name": "ghaiklor",
+    "email": "ghaiklor@gmail.com",
+    "url": "https://www.facebook.com/ghaiklor"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Orel",
+      "email": "ashaman1991@gmail.com",
+      "url": "https://www.facebook.com/ashaman1991"
     }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ghaiklor/passport-yahoo-token/issues"
+  },
+  "homepage": "https://github.com/ghaiklor/passport-yahoo-token",
+  "dependencies": {
+    "passport-oauth": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "chai-passport-strategy": "^0.2.0",
+    "istanbul": "^0.3.7",
+    "mocha": "^2.1.0"
+  }
 }

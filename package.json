@@ -1,8 +1,8 @@
 {
   "name": "passport-yahoo-token",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "Passport strategy for authenticating with Yahoo via OAuth2 access tokens",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "compile": "babel src --out-dir lib",
     "prepublish": "npm run compile",

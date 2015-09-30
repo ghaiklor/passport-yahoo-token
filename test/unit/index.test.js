@@ -83,7 +83,7 @@ describe('YahooTokenStrategy:authenticate', () => {
         .fail(error => {
           assert.typeOf(error, 'object');
           assert.typeOf(error.message, 'string');
-          assert.equal(error.message, 'You should provide access_token');
+          assert.equal(error.message, 'You should provide access_token and xoauth_yahoo_guid');
           done();
         })
         .authenticate();
@@ -131,7 +131,7 @@ describe('YahooTokenStrategy:userProfile', () => {
 
     sinon.stub(strategy._oauth2, 'get', (url, accessToken, next) => next(null, fakeProfile, null));
 
-    strategy.userProfile('accessToken', (error, profile) => {
+    strategy.userProfile('accessToken', 'xoauthYahooGuid', (error, profile) => {
       if (error) return done(error);
 
       assert.equal(profile.provider, 'yahoo');
@@ -155,7 +155,7 @@ describe('YahooTokenStrategy:userProfile', () => {
 
     sinon.stub(strategy._oauth2, 'get', (url, accessToken, done) => done(null, 'not a JSON', null));
 
-    strategy.userProfile('accessToken', (error, profile) => {
+    strategy.userProfile('accessToken', 'xoauthYahooGuid', (error, profile) => {
       assert(error instanceof SyntaxError);
       assert.equal(typeof profile, 'undefined');
       done();
@@ -167,7 +167,7 @@ describe('YahooTokenStrategy:userProfile', () => {
 
     sinon.stub(strategy._oauth2, 'get', (url, accessToken, done) => done(new Error('ERROR'), 'not a JSON', null));
 
-    strategy.userProfile('accessToken', (error, profile) => {
+    strategy.userProfile('accessToken', 'xoauthYahooGuid', (error, profile) => {
       assert.instanceOf(error, Error);
       assert.equal(typeof profile, 'undefined');
       done();
@@ -178,39 +178,18 @@ describe('YahooTokenStrategy:userProfile', () => {
     let strategy = new YahooTokenStrategy(STRATEGY_CONFIG, BLANK_FUNCTION);
 
     sinon.stub(strategy._oauth2, 'get', (url, accessToken, done) => done({
+      statusCode: 'CODE',
       data: JSON.stringify({
         error: {
-          message: 'MESSAGE',
-          code: 'CODE'
+          description: 'MESSAGE'
         }
       })
     }, 'not a JSON', null));
 
-    strategy.userProfile('accessToken', (error, profile) => {
+    strategy.userProfile('accessToken', 'xoauthYahooGuid', (error, profile) => {
       assert.equal(error.message, 'MESSAGE');
       assert.equal(error.oauthError, 'CODE');
       assert.equal(typeof profile, 'undefined');
-      done();
-    });
-  });
-
-  it('Should properly parse profile with empty response', done => {
-    let strategy = new YahooTokenStrategy(STRATEGY_CONFIG, BLANK_FUNCTION);
-
-    sinon.stub(strategy._oauth2, 'get', (url, accessToken, done) => done(null, JSON.stringify({}), null));
-
-    strategy.userProfile('accessToken', (error, profile) => {
-      assert.deepEqual(profile, {
-        provider: 'yahoo',
-        id: undefined,
-        displayName: '',
-        name: {familyName: '', givenName: ''},
-        emails: [],
-        photos: [{value: ''}],
-        _raw: '{}',
-        _json: {}
-      });
-
       done();
     });
   });

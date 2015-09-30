@@ -1,4 +1,4 @@
-{
+export default JSON.stringify({
   "profile": {
     "guid": "SCQ4A46XAEDWNYKPZ6PJ4JHC4E",
     "addresses": [
@@ -68,4 +68,4 @@
     "uri": "https://social.yahooapis.com/v1/user/SCQ4A46XAEDWNYKPZ6PJ4JHC4E/profile",
     "cache": true
   }
-}
+});

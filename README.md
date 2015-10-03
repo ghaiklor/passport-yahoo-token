@@ -28,6 +28,8 @@ The Yahoo! authentication strategy authenticates users using a Yahoo! account an
 The strategy requires a `verify` callback, which accepts these credentials and calls `next` providing a user, as well as `options` specifying a app ID and app secret.
 
 ```javascript
+var YahooTokenStrategy = require('passport-yahoo-token');
+
 passport.use(new YahooTokenStrategy({
     clientID: YAHOO_CLIENT_ID,
     clientSecret: YAHOO_CLIENT_SECRET,

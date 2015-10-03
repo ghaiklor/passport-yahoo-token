@@ -12,21 +12,17 @@ import { OAuth2Strategy, InternalOAuthError } from 'passport-oauth';
  * - clientSecret      your Yahoo application's App Secret
  * - passReqToCallback If need, pass req to verify callback
  *
- * Example:
- *     passport.use(new YahooTokenStrategy({
- *           clientID: '123-456-789',
- *           clientSecret: 'shhh-its-a-secret',
- *           passReqToCallback: true
- *       }, function(req, accessToken, refreshToken, profile, next) {
- *              User.findOrCreate(..., function (error, user) {
- *                  next(error, user);
- *              });
- *          }
- *       ));
- *
  * @param {Object} _options
  * @param {Function} _verify
- * @constructor
+ * @example
+ * passport.use(new YahooTokenStrategy({
+ *   clientID: '123456789',
+ *   clientSecret: 'shhh-its-a-secret'
+ * }), function(req, accessToken, refreshToken, profile, next) {
+ *   User.findOrCreate({yahooId: profile.id}, function(error, user) {
+ *     next(error, user);
+ *   })
+ * });
  */
 export default class YahooTokenStrategy extends OAuth2Strategy {
   constructor(_options, _verify) {
@@ -44,7 +40,8 @@ export default class YahooTokenStrategy extends OAuth2Strategy {
     this._xoauthYahooGuidField = options.xoauthYahooGuidField || 'xoauth_yahoo_guid';
     this._profileURL = options.profileURL || 'https://social.yahooapis.com/v1/user/:xoauthYahooGuid/profile?format=json';
     this._passReqToCallback = options.passReqToCallback;
-    this._oauth2._useAuthorizationHeaderForGET = true;
+
+    this._oauth2.useAuthorizationHeaderforGET(true);
   }
 
   /**
@@ -58,7 +55,7 @@ export default class YahooTokenStrategy extends OAuth2Strategy {
     let refreshToken = (req.body && req.body[this._refreshTokenField]) || (req.query && req.query[this._refreshTokenField]);
     let xoauthYahooGuid = (req.body && req.body[this._xoauthYahooGuidField]) || (req.query && req.query[this._xoauthYahooGuidField]);
 
-    if (!accessToken && !xoauthYahooGuid) return this.fail({message: `You should provide ${this._accessTokenField} and ${this._xoauthYahooGuidField}`});
+    if (!accessToken || !xoauthYahooGuid) return this.fail({message: `You should provide ${this._accessTokenField} and ${this._xoauthYahooGuidField}`});
 
     this._loadUserProfile({
       accessToken: accessToken,

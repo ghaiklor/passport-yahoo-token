@@ -55,7 +55,8 @@ describe('YahooTokenStrategy:authenticate', () => {
         .req(req => {
           req.body = {
             access_token: 'access_token',
-            refresh_token: 'refresh_token'
+            refresh_token: 'refresh_token',
+            xoauth_yahoo_guid: '1234'
           }
         })
         .authenticate();
@@ -72,7 +73,8 @@ describe('YahooTokenStrategy:authenticate', () => {
         .req(req => {
           req.query = {
             access_token: 'access_token',
-            refresh_token: 'refresh_token'
+            refresh_token: 'refresh_token',
+            xoauth_yahoo_guid: '1234'
           }
         })
         .authenticate();
@@ -117,7 +119,8 @@ describe('YahooTokenStrategy:authenticate', () => {
         .req(req => {
           req.body = {
             access_token: 'access_token',
-            refresh_token: 'refresh_token'
+            refresh_token: 'refresh_token',
+            xoauth_yahoo_guid: '1234'
           }
         })
         .authenticate({});
